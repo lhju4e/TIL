@@ -34,16 +34,21 @@ int main()
             }
         }
     }
-    long long ans = 1;
+    double ans = 0; // int형으로 했더니 자꾸 이상하게 빼짐.!!!
     for(int i=0; i<n; i++)
     {
         for(int j=0; j<a[i].length(); j++)
         {
-            cout << a[i][j] << " " << m.find(a[i][j])->second << endl;
-            cout << "pow(10, a[i].length() - j - 1) " << pow(10, a[i].length() - j - 1) << endl;
-            cout << "((m.find(a[i][j])->second) * pow(10, a[i].length() - j - 1)) " << ((m.find(a[i][j])->second) * pow(10, a[i].length() - j - 1)) << endl;
-            ans += (int)((m.find(a[i][j])->second) * pow(10, a[i].length() - j - 1));
-            cout << "ans " << ans << endl;
+            
+            // cout << a[i][j] << " " << m.find(a[i][j])->second << endl;
+            // cout << "pow(10, a[i].length() - j - 1) " << pow(10, a[i].length() - j - 1) << endl;
+            // cout << "((m.find(a[i][j])->second) * pow(10, a[i].length() - j - 1)) " << ((m.find(a[i][j])->second) * pow(10, a[i].length() - j - 1)) << endl;
+
+
+            ans += ((m.find(a[i][j])->second) * pow(10, a[i].length() - j - 1))  ;
+
+            
+            // cout << "ans " << ans << endl;
         }   
     }
     cout << ans;
