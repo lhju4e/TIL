@@ -11,7 +11,7 @@ int main()
     vector<int> ab;
     vector<int> cd;
     int n;
-    int cnt=0;
+    long long cnt=0;
     cin >> n;
     for(int i=0; i<n; i++)
     {
@@ -36,7 +36,8 @@ int main()
     // cout << endl;
     int i=0,j=cd.size()-1;
     //ab그룹이 음수고, cd그룹이 양수인 경우
-    while(ab[i] <= 0 && cd[j] >= 0)
+
+    while(j>=0 && i<ab.size())
     {
         if(ab[i] + cd[j] == 0)
         {            
@@ -44,57 +45,26 @@ int main()
 
             int c1 = 1;
             int c2 = 1;
-            while(i<n-1 && ab[i] == ab[i+1])
+            while(i<ab.size()-1 && ab[i] == ab[i+1])
             {
                 c1++;
                 i++;
+                // cout << "i " << i << endl;
             }
             while(j>0 && cd[j] == cd[j-1])
             {
                 c2++;
                 j--;
+                // cout << "j " << j << endl;
             }
             i++;j--;
-            cnt += c1* c2;
+            cnt += (long long)c1* c2;
         }
         else if(ab[i] + cd[j] > 0)
             j--;
         else if(ab[i] + cd[j] < 0)
             i++;
     }
-    j=0;
-    i = ab.size()-1;
-// cout << "=============================="<< cnt << "=========="<<endl;
-    //ab그룹이 양수고, cd그룹이 음수인 경우
-    while(ab[i] > 0 && cd[j] < 0)
-    {
-
-        if(ab[i] + cd[j] == 0)
-        {
-                            // cout <<"i " <<i<< " ab[i] " << ab[i] << " j "<< j << " cd[j] " << cd[j] << endl;
-
-            int c1 = 1;
-            int c2 = 1;
-            while(i>0 && ab[i] == ab[i-1])
-            {
-                c1++;
-                i--;
-            }
-            while(j<n-1 && cd[j] == cd[j+1])
-            {
-                c2++;
-                j++;
-            }
-            j++;i--;
-            cnt += c1* c2;
-        }
-        else if(ab[i] + cd[j] > 0)
-            i--;
-        else if(ab[i] + cd[j] < 0)
-            j++;
-    }
-
-
     cout << cnt;
     return 0;
 }
