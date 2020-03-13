@@ -13,7 +13,7 @@ int main()
     int MIN = 100001;
     while (start_index <= end_index && end_index <= n)
     {
-        printf("%d %d %d\n", start_index, end_index, b);
+        // printf("%d %d %d\n", start_index, end_index, b);
         if (b >= s)
         {
             ans = end_index - start_index;

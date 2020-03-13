@@ -13,6 +13,8 @@ int pow(int x, int y)
 
 int main()
 {
+    int dx[4] = {-1, 1, 0, 0};
+    int dy[4] = {0, 0, 1, -1};
     int puzzle[3][3];
     for(int i=0; i<3; i++)
         for(int j=0; j<3; j++)
@@ -23,7 +25,11 @@ int main()
     check[a] = true;
     while(!q.empty())
     {
-        
+        int b = q.front();
+        q.pop();
+
+
+
     }
 
 
