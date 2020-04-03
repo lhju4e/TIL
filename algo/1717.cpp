@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 using namespace std;
 int p[1000001];
 int find(int x);
@@ -6,19 +6,19 @@ void Union(int x, int y);
 int main()
 {
     int n, m;
-    cin >> n >> m;
+    scanf("%d %d", &n, &m);
     for(int i=1; i<=n; i++)
         p[i] = i;
     int a, b, c;
     for(int i=0; i<m; i++)
     {
-        cin >> a>> b >> c;
+        scanf("%d %d %d", &a, &b, &c);
         if(a) // 같은 집합인지 확인
         {
             if(find(b) == find(c))
-                cout << "YES" << endl;
+                printf("YES\n");
             else
-                cout << "NO" << endl;
+                printf("NO\n");
         }
         else
             Union(b, c);
@@ -43,6 +43,6 @@ void Union(int x, int y)
     int a = find(x);
     int b = find(y);
     if(a!=b)
-        p[y] = a;
+        p[b] = a;
 }
 
