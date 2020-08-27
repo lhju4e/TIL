@@ -8,3 +8,4 @@ def solution(numbers):
 if __name__ == "__main__":
     numbers = [6, 11, 10, 13, 2]
     print(solution(numbers))
+ 

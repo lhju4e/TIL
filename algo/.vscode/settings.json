@@ -45,7 +45,8 @@
     "unordered_map": "cpp",
     "xtree": "cpp",
     "concepts": "cpp",
-    "list": "cpp"
+    "list": "cpp",
+    "xhash": "cpp"
   },
   "python.pythonPath": "C:\\Users\\today\\AppData\\Local\\Continuum\\anaconda3\\python.exe"
 }
