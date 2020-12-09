@@ -6,7 +6,7 @@ k = int(sys.stdin.readline())
 for i in range(v+1):
     graph_arr.append([])
 for i in range(e):
-    tmp = list(map(int, input().split()))
+    tmp = list(map(int, sys.stdin.readline().split()))
     graph_arr[tmp[0]].append([tmp[1], tmp[2]])
 dist = [100000000 for i in range(v+1)]
 pq = []  
